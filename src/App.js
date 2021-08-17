@@ -17,11 +17,12 @@ class App extends Component {
 
   static propTypes = {};
 
-  addContact = (name) => {
+  addContact = (name, number) => {
     // console.log(name);
     const contactsItem = {
       id: uuidv4(),
       name,
+      number,
     };
 
     this.setState(({ contacts }) => ({
