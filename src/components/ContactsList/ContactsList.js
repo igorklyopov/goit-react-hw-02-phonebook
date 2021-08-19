@@ -1,6 +1,6 @@
-import style from "../Contacts/Contacts.module.css";
+import style from "../ContactsList/ContactsList.module.css";
 
-const Contacts = ({ contacts }) => {
+const ContactsList = ({ contacts }) => {
   return (
     <ul className={style.contactsList}>
       {contacts.map((contact) => (
@@ -13,4 +13,4 @@ const Contacts = ({ contacts }) => {
   );
 };
 
-export default Contacts;
+export default ContactsList;
