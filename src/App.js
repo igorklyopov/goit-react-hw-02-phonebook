@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Container from "./components/Container/Container";
 import ContactsList from "./components/ContactsList/ContactsList";
-import Form from "./components/ContactForm/ContactForm";
+import ContactForm from "./components/ContactForm/ContactForm";
 import Filter from "./components/Filter/Filter";
 
 class App extends Component {
@@ -25,6 +25,26 @@ class App extends Component {
       number,
     };
 
+    const { contacts } = this.state;
+
+    const duplicateContactName = contacts.find(
+      (contact) => contact.name === contactsItem.name
+    );
+    const duplicateContactNumber = contacts.find(
+      (contact) => contact.number === contactsItem.number
+    );
+
+    if (duplicateContactName) {
+      alert(`${contactsItem.name} is already in contacts!`);
+      return;
+    }
+    if (duplicateContactNumber) {
+      alert(
+        `${contactsItem.number} is already in contacts! (${duplicateContactNumber.name} has this number)`
+      );
+      return;
+    }
+
     this.setState(({ contacts }) => ({
       contacts: [contactsItem, ...contacts],
     }));
@@ -43,16 +63,27 @@ class App extends Component {
     );
   };
 
+  deleteContact = (contactId) => {
+    this.setState((prevState) => ({
+      contacts: prevState.contacts.filter(
+        (contact) => contact.id !== contactId
+      ),
+    }));
+  };
+
   render() {
     const filteredContacts = this.getFilteredContacts();
 
     return (
       <Container>
         <h1>Phonebook</h1>
-        <Form onSubmitData={this.addContact} />
+        <ContactForm onSubmitData={this.addContact} />
         <h2>Contacts</h2>
         <Filter onFilterChange={this.onFilterChange} />
-        <ContactsList contacts={filteredContacts} />
+        <ContactsList
+          contacts={filteredContacts}
+          onDeleteContactBtnClick={this.deleteContact}
+        />
       </Container>
     );
   }

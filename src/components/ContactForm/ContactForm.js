@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import style from "../ContactForm/ContactForm.module.css";
 
-class ContactsForm extends Component {
+class ContactForm extends Component {
   state = {
     name: "",
     number: "",
@@ -58,4 +58,4 @@ class ContactsForm extends Component {
   }
 }
 
-export default ContactsForm;
+export default ContactForm;
