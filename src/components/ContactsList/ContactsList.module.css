@@ -1,5 +1,21 @@
 .contactsList {
+  /* list */
+  margin-top: 0;
+  padding-left: 0;
+  list-style: none;
+  /*  */
 }
 
 .contactsListItem {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactsName {
+}
+
+.contactsNumber {
+  margin-right: 10px;
 }

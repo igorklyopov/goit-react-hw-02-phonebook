@@ -1,8 +1,10 @@
 .contactsFilterInput {
+  display: block;
 }
 
 .contactsFilterLabel {
 }
 
 .contactsFilterLabelText {
+  /* margin-right: 10px; */
 }
