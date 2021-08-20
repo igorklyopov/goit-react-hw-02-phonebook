@@ -4,18 +4,34 @@
   padding-left: 0;
   list-style: none;
   /*  */
+  /* width: 100%; */
+}
+
+@media screen and (min-width: 768px) {
+  .contactsList {
+    /* width: 60%; */
+  }
 }
 
 .contactsListItem {
-  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.contactsName,
+.contactsNumber {
+  /* text-align: left; */
+  margin-right: 5px;
+}
+
 .contactsName {
+  text-align: left;
 }
 
 .contactsNumber {
-  margin-right: 10px;
+}
+
+.btnDelContact {
+  /* margin-right: 5px; */
 }

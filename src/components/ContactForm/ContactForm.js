@@ -32,10 +32,11 @@ class ContactForm extends Component {
     const { name, number } = this.state;
 
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <label>
-          <span>Name</span>
+      <form className={style.contactForm} onSubmit={this.onFormSubmit}>
+        <label className={style.inputNameLabel}>
+          <span className={style.inputLabelText}>Name</span>
           <input
+            className={style.inputName}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я ]*)*$"
@@ -45,9 +46,10 @@ class ContactForm extends Component {
             onChange={this.onInputChange}
           />
         </label>
-        <label>
-          <span>Number</span>
+        <label className={style.inputTelNumberLabel}>
+          <span className={style.inputLabelText}>Number</span>
           <input
+            className={style.inputTelNumber}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

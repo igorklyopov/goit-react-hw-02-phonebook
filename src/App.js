@@ -4,6 +4,7 @@ import Container from "./components/Container/Container";
 import ContactsList from "./components/ContactsList/ContactsList";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Filter from "./components/Filter/Filter";
+import Section from "./components/Section/Section";
 
 class App extends Component {
   state = {
@@ -75,16 +76,18 @@ class App extends Component {
     const filteredContacts = this.getFilteredContacts();
 
     return (
-      <Container>
-        <h1>Phonebook</h1>
-        <ContactForm onSubmitData={this.addContact} />
-        <h2>Contacts</h2>
-        <Filter onFilterChange={this.onFilterChange} />
-        <ContactsList
-          contacts={filteredContacts}
-          onDeleteContactBtnClick={this.deleteContact}
-        />
-      </Container>
+      <Section>
+        <Container>
+          <h1 className="mainTitle">Phonebook</h1>
+          <ContactForm onSubmitData={this.addContact} />
+          <h2 className="title">Contacts</h2>
+          <Filter onFilterChange={this.onFilterChange} />
+          <ContactsList
+            contacts={filteredContacts}
+            onDeleteContactBtnClick={this.deleteContact}
+          />
+        </Container>
+      </Section>
     );
   }
 }

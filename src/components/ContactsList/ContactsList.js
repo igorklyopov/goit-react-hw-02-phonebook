@@ -9,6 +9,7 @@ const ContactsList = ({ contacts, onDeleteContactBtnClick }) => {
           <p className={style.contactsName}>{name}: </p>
           <p className={style.contactsNumber}>{number}</p>
           <button
+            className={style.btnDelContact}
             type="button"
             onClick={() => onDeleteContactBtnClick(id)}
             aria-label="Delete contact button"
